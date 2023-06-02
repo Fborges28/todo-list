@@ -3,13 +3,7 @@
 import {Button, Input } from "@/components";
 import { FormEvent, useState } from 'react';
 import styles from "@/shared/styles/Form.module.css";
-
-
-interface IForm {
-  city: string;
-  age: string;
-  name: string;
-}
+import { IForm } from "@/types";
 
 export default function ControlledForm() {
 

@@ -1,18 +1,6 @@
 import React from 'react'
 import styles from "./Input.module.css";
-
-interface InputProps {
-  value?: string;
-  name: string;
-  id: string;
-  placeholder: string;
-  type: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onBlur?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onFocus?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onKeyDown?: (event: React.KeyboardEvent) => void;
-  onKeyUp?: (event: React.KeyboardEvent) => void;
-}
+import { InputProps } from '@/types';
 
 function Input({
   id,

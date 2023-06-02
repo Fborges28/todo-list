@@ -1,8 +1,6 @@
 import React from 'react'
 import style from "./Button.module.css";
-
-
-type ButtonType = "button" | "submit" | "reset" | undefined;
+import { ButtonType } from '@/types';
 
 function Button({children, type}: {children: string, type: ButtonType}) {
   return (
