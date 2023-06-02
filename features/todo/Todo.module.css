@@ -1,0 +1,18 @@
+.form {
+  display: flex;
+  gap: 12px;
+  width: 400px;
+}
+
+.input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 20px;
+  height: 40px;
+}
+
+.todoList{
+  display: block;
+  justify-self: start;  
+  width: 400px;
+}
