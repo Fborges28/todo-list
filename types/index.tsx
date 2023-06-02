@@ -18,3 +18,9 @@ export interface InputProps {
   onKeyDown?: (event: React.KeyboardEvent) => void;
   onKeyUp?: (event: React.KeyboardEvent) => void;
 }
+
+export interface ITodoItem {
+  id: number;
+  label: string;
+  completed: boolean;
+}

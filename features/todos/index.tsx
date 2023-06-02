@@ -1,19 +1,14 @@
 'use client';
 
-import {Button, ButtonIcon } from "@/components";
+import {Button, Input, ButtonIcon } from "@/components";
 import { FormEvent, useState } from 'react';
 import styles from "./Todo.module.css";
+import { ITodoItem } from "@/types";
 
-interface ITodo {
-  id: number;
-  label: string;
-  completed: boolean;
-}
-
-export default function Todo() {
+export default function Todos() {
 
   const [todoValue, setTodoValue] = useState<string>("");
-  const [todos, setTodos] = useState<ITodo[]>([]);
+  const [todos, setTodos] = useState<ITodoItem[]>([]);
 
   const addTodo = (newTodo: string) => {
     setTodos([
@@ -39,7 +34,7 @@ export default function Todo() {
   return (
     <>
       <form id='todo-form' className={styles.form} onSubmit={handleSubmit}>
-        <input className={styles.input} value={todoValue} id="todo" name='todo' type="text" placeholder="Insert a new todo" onChange={handleChange}/>
+        <Input value={todoValue} id="todo" name='todo' type="text" placeholder="Insert a new todo" onChange={handleChange}/>
         <Button type="submit">Submit</Button>
       </form>
       <section className={styles.todoList}>
