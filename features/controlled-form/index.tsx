@@ -1,8 +1,8 @@
 'use client';
 
-import {Button, ButtonIcon } from "@/components";
+import {Button, Input } from "@/components";
 import { FormEvent, useState } from 'react';
-import styles from "../shared/Form.module.css";
+import styles from "@/shared/styles/Form.module.css";
 
 
 interface IForm {
@@ -34,9 +34,9 @@ export default function ControlledForm() {
 
   return (
     <form id='my-form' className={styles.form} onSubmit={handleSubmit}>
-      <input className={styles.input} value={formData.age} name='age' type="text" placeholder="Idade" onChange={handleChange}/>
-      <input className={styles.input} value={formData.city} name='city' type="text" placeholder="Cidade" onChange={handleChange}/>
-      <input className={styles.input} value={formData.name} name='name' type="text" placeholder="Nome" onChange={handleChange}/>
+      <Input value={formData.age} id="age" name='age' type="text" placeholder="Idade" onChange={handleChange}></Input>
+      <Input value={formData.city} id="city" name='city' type="text" placeholder="Cidade" onChange={handleChange}></Input>
+      <Input value={formData.name} id="name" name='name' type="text" placeholder="Nome" onChange={handleChange}></Input>
       <Button type="submit">Submit</Button>
     </form>
   )

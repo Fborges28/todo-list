@@ -1,5 +1,3 @@
-'use client';
-
 import {ControlledForm} from "@/features";
 
 export default function ControlledState() {

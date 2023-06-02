@@ -1,5 +1,3 @@
-'use client';
-
 import {FormByReference} from "@/features";
 
 export default function FormReference() {

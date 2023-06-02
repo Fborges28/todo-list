@@ -1,8 +1,8 @@
 'use client';
 
-import {Button } from "@/components";
+import {Button, Input } from "@/components";
 import { FormEvent, useRef } from 'react';
-import styles from "../shared/Form.module.css";
+import styles from "@/shared/styles/Form.module.css";
 
 export default function FormByReference() {
 
@@ -17,10 +17,10 @@ export default function FormByReference() {
 
   return (
     <form ref={formRef} id='my-form' className={styles.form} onSubmit={handleSubmit}>
-      <input className={styles.input} name='age' type="text" placeholder="Idade"/>
-      <input className={styles.input} name='city' type="text" placeholder="Cidade"/>
-      <input className={styles.input} name='name' type="text" placeholder="Nome"/>
-      <input className={styles.input} name='country' type="text" placeholder="País"/>
+      <Input id="age" name='age' type="text" placeholder="Idade"></Input>
+      <Input id="city" name='city' type="text" placeholder="Cidade"></Input>
+      <Input id="name" name='name' type="text" placeholder="Nome"></Input>
+      <Input id="country" name='country' type="text" placeholder="País"></Input>
       <Button type="submit">Submit</Button>
     </form>
   )
