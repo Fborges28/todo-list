@@ -1,7 +1,7 @@
 .form {
   display: flex;
   gap: 12px;
-  width: 400px;
+  width: 440px;
 }
 
 .input {
@@ -14,5 +14,5 @@
 .todoList{
   display: block;
   justify-self: start;  
-  width: 400px;
+  width: 440px;
 }

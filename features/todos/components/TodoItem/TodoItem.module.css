@@ -1,0 +1,33 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.todoInfo {
+  display: flex;
+  gap: 10px;
+}
+
+.todoInfo input{
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.todoOptions{
+  display: flex;
+  gap: 10px;
+}
+
+.todoOptions button{
+  cursor: pointer;
+}
+
+.todoLabelCompleted {
+  text-decoration: line-through;
+}

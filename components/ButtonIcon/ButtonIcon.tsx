@@ -7,7 +7,12 @@ import style from "./ButtonIcon.module.css";
 
 library.add(fas);
 
-function ButtonIcon({icon}: {icon: IconName}) {
+interface ButtonIconProps {
+  icon: IconName;
+  onClick: () => void;
+}
+
+function ButtonIcon({icon}: ButtonIconProps) {
     return (
       <button className={style["btn-icon"]} title='Button Icon'>
         <FontAwesomeIcon icon={icon} />
