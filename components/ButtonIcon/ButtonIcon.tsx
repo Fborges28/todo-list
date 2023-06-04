@@ -9,12 +9,12 @@ library.add(fas);
 
 interface ButtonIconProps {
   icon: IconName;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
-function ButtonIcon({icon}: ButtonIconProps) {
+function ButtonIcon({icon, onClick}: ButtonIconProps) {
     return (
-      <button className={style["btn-icon"]} title='Button Icon'>
+      <button className={style["btn-icon"]} title='Button Icon' onClick={onClick}>
         <FontAwesomeIcon icon={icon} />
       </button>
     )

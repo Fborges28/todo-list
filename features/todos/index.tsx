@@ -11,16 +11,34 @@ export default function Todos() {
   const [todoValue, setTodoValue] = useState<string>("");
   const [todos, setTodos] = useState<ITodoItem[]>([]);
 
-  const addTodo = (newTodo: string) => {
+  const addTodo = (newTodoValue: string) => {
     setTodos([
       ...todos,
       {
         id: todos.length + 1,
-        label: newTodo,
+        label: newTodoValue,
         completed: false
       },
     ])
   };
+
+  const removeTodo = (id: number) => {
+    setTodos(todos.filter(todo => todo.id !== id));
+  };
+
+  const updateTodo = (id: number, newValue: string) => {
+    setTodos(
+      todos.map(todo => {
+        if (todo.id === id) {
+          return {
+          ...todo,
+            label: newValue,
+          };
+        }
+        return todo;
+      })
+    )
+  }
 
   const setCompleteTodo = (todo: ITodoItem, completed: boolean) => {
     todo.completed = completed;
@@ -46,7 +64,13 @@ export default function Todos() {
         <ul>
           {
             todos.map((todo, index) => (
-              <TodoItem {...todo} key={todo.id} onComplete={(completed) => setCompleteTodo(todo, completed)}/>
+              <TodoItem 
+                {...todo} 
+                key={todo.id} 
+                onComplete={(completed) => setCompleteTodo(todo, completed)}
+                onConfirmEdit={(newValue: string) => updateTodo(todo.id, newValue)} 
+                onRemove={() => removeTodo(todo.id)} 
+              />
             ))
           }
         </ul>

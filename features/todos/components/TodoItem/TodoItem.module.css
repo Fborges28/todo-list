@@ -31,3 +31,22 @@
 .todoLabelCompleted {
   text-decoration: line-through;
 }
+
+.todoEditMode .todoOptions {
+  flex-wrap: wrap;
+}
+
+.todoEditMode input {
+  width: 100%;
+}
+
+.todoEditMode button {
+  flex: 1;
+}
+
+.todoRow {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
