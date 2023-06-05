@@ -16,10 +16,6 @@ export default function Home() {
       <Link href={"/todos"}>
         Todos - Todos com useState
       </Link>
-
-      <Link href={"/todos-context"}>
-        Todos - Todos com useReducer e useContext
-      </Link>
     </main>
   )
 }

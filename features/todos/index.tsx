@@ -1,10 +1,10 @@
 'use client';
 
-import {Button, Input, TodoItem } from "@/components";
+import {Button, Input } from "@/components";
 import { FormEvent, useState } from 'react';
 import styles from "./Todo.module.css";
 import { ITodoItem } from "@/types";
-import TodoList from "@/components/TodoList/TodoList";
+import { TodoList } from "@/components";
 
 export default function Todos() {
 
@@ -47,6 +47,7 @@ export default function Todos() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     addTodo(todoValue);
+    setTodoValue("");
   }
 
   const handleChange = (e: FormEvent) => {
