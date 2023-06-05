@@ -1,0 +1,18 @@
+.formValidation {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  --color-error: red;
+  transition: all 0.5s ease-in-out;
+}
+
+.errorMessage {
+  color: var(--color-error);
+  font-size: 12px;
+}
+
+.formValidation--error input,
+.formValidation--error textarea,
+.formValidation--error select {
+  border: 1px solid var(--color-error);
+}

@@ -1,9 +1,16 @@
 'use client';
 
-import {Button, Input } from "@/components";
+import {Button, Input, FormValidation } from "@/components";
 import { FormEvent, useState } from 'react';
 import styles from "@/shared/styles/Form.module.css";
 import { IForm } from "@/types";
+
+interface IFormValidationProps {
+  age: {
+    isValid: boolean;
+    message: string;
+  };
+}
 
 export default function ControlledForm() {
 
@@ -11,6 +18,13 @@ export default function ControlledForm() {
     age: '',
     city: '',
     name: ''
+  });
+
+  const [formValidation, setFormValidation] = useState<IFormValidationProps>({
+    age: {
+      isValid: false,
+      message: 'Campo inválido'
+    }
   });
 
   const handleSubmit = (e: FormEvent) => {
@@ -24,11 +38,20 @@ export default function ControlledForm() {
     ...formData,
       [target.name]: target.value
     });
+
+    setFormValidation({
+      ...formValidation,
+      [target.name]: {
+        isValid: true,
+      }
+    })
   }
 
   return (
     <form id='my-form' className={styles.form} onSubmit={handleSubmit}>
-      <Input value={formData.age} id="age" name='age' type="text" placeholder="Idade" onChange={handleChange}></Input>
+      <FormValidation error={!formValidation.age.isValid} errorMessage={formValidation.age.message}>
+        <Input value={formData.age} id="age" name='age' type="text" placeholder="Idade" onChange={handleChange}></Input>
+      </FormValidation>
       <Input value={formData.city} id="city" name='city' type="text" placeholder="Cidade" onChange={handleChange}></Input>
       <Input value={formData.name} id="name" name='name' type="text" placeholder="Nome" onChange={handleChange}></Input>
       <Button type="submit">Submit</Button>
