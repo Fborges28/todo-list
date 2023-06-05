@@ -2,17 +2,10 @@
   display: flex;
   gap: 12px;
   width: 440px;
+  justify-content: space-between;
 }
 
-.input {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px 20px;
-  height: 40px;
+.form input {
+  flex: 1;
 }
 
-.todoList{
-  display: block;
-  justify-self: start;  
-  width: 440px;
-}
