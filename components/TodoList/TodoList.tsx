@@ -12,7 +12,7 @@ interface ITodoList {
 
 function TodoList({todos, completeTodo, removeTodo, editTodo}: ITodoList) {
   return (
-    <section className={styles.todoList}>
+    <section className={styles.todoList} id="todo-list">
       <ul>
         {
           todos.map((todo, index) => (
